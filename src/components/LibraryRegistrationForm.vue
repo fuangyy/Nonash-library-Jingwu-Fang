@@ -31,6 +31,7 @@ const clearForm = () => {
     reason: '',
     gender: ''
   }
+  errors.value.reason = null
 }
 
 const errors = ref({
@@ -47,6 +48,14 @@ const validateName = (blur) => {
     if (blur) errors.value.username = 'Name must be at least 3 characters'
   } else {
     errors.value.username = null
+  }
+}
+
+const validateReason = () => {
+  if (formData.value.reason.toLowerCase().includes('friend')) {
+    errors.value.reason = 'Great to have a friend'
+  } else {
+    errors.value.reason = null
   }
 }
 
@@ -165,7 +174,9 @@ const validateConfirmPassword = (blur) => {
               id="reason"
               rows="3"
               v-model="formData.reason"
+              @input="() => validateReason()"
             ></textarea>
+            <div v-if="errors.reason" class="text-success">{{ errors.reason }}</div>
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary me-2">Submit</button>
