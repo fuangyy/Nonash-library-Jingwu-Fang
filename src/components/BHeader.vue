@@ -31,7 +31,14 @@ const handleLogout = () => {
           <button type="button" class="nav-link" @click="handleLogout">Logout</button>
         </li>
         <li class="nav-item">
-          <router-link to="/Firelogin" class="nav-link" active-class="active">Firelogin</router-link>
+          <router-link to="/FireRegister" class="nav-link" active-class="active"
+            >FireRegister</router-link
+          >
+        </li>
+        <li class="nav-item">
+          <router-link to="/Firelogin" class="nav-link" active-class="active"
+            >Firelogin</router-link
+          >
         </li>
       </ul>
     </header>
