@@ -30,6 +30,9 @@ const handleLogout = () => {
         <li v-else class="nav-item">
           <button type="button" class="nav-link" @click="handleLogout">Logout</button>
         </li>
+        <li class="nav-item">
+          <router-link to="/Firelogin" class="nav-link" active-class="active">Firelogin</router-link>
+        </li>
       </ul>
     </header>
   </div>
