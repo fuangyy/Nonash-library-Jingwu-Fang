@@ -60,7 +60,7 @@ const routes = [
     name: 'FireRegister',
     component: FirebaseRegisterView
   },
-    {
+  {
     path: '/addbook',
     name: 'AddBook',
     component: AddBookView
