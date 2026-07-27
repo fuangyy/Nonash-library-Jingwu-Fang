@@ -40,6 +40,11 @@ const handleLogout = () => {
             >Firelogin</router-link
           >
         </li>
+        <li class="nav-item">
+          <router-link to="/FireSignout" class="nav-link" active-class="active"
+            >FireSignout</router-link
+          >
+        </li>
       </ul>
     </header>
   </div>
