@@ -9,6 +9,7 @@ import FirebaseSignoutView from '@/views/FirebaseSignoutView.vue'
 import FirebaseRegisterView from '@/views/FirebaseRegisterView.vue'
 import AddBookView from '@/views/AddBookView.vue'
 import WeatherView from '@/views/WeatherView.vue'
+import CountBookAPI from '@/views/CountBookAPI.vue'
 
 const isAuthenticated = ref(false)
 
@@ -70,7 +71,12 @@ const routes = [
     path: '/WeatherCheck',
     name: 'WeatherCheck',
     component: WeatherView
-  }
+  },
+  {
+    path: '/CountBookAPI',
+    name: 'CountBookAPI',
+    component: CountBookAPI
+  },
 ]
 
 const router = createRouter({
