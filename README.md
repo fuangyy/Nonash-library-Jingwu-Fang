@@ -1,4 +1,6 @@
-# NoMash-Library
+# NoMash-Library-Jingwu Fang
+
+Link to the deployed project：[https://75f19780.nonash-library-jingwu-fang.pages.dev/](https://75f19780.nonash-library-jingwu-fang.pages.dev/)
 
 This template should help get you started developing with Vue 3 in Vite.
 
