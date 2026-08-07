@@ -11,6 +11,7 @@ import AddBookView from '@/views/AddBookView.vue'
 import WeatherView from '@/views/WeatherView.vue'
 import CountBookAPI from '@/views/CountBookAPI.vue'
 import GetAllBookAPI from '@/views/GetAllBookAPI.vue'
+import GetBookCountView from '@/views/GetBookCountView.vue'
 
 const isAuthenticated = ref(false)
 
@@ -82,6 +83,11 @@ const routes = [
     path: '/GetAllBookAPI',
     name: 'GetAllBookAPI',
     component: GetAllBookAPI
+  },
+  {
+    path: '/GetBookCount',
+    name: 'GetBookCount',
+    component: GetBookCountView
   },
 ]
 
