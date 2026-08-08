@@ -3,9 +3,10 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { onMounted, ref } from 'vue'
-import { collection, getDocs } from 'firebase/firestore'
-import db from '../firebase/init.js'
+
+const getBooksUrl = 'https://count-books-syrcpypgzw.cn-hongkong.fcapp.run'
 
 export default {
   setup() {
@@ -13,11 +14,8 @@ export default {
 
     const fetchBooks = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'books'))
-        books.value = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data()
-        }))
+        const response = await axios.get(getBooksUrl)
+        books.value = response.data.books
       } catch (error) {
         console.error('Error fetching books: ', error)
       }

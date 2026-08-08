@@ -10,6 +10,14 @@ const jsonResponse = (statusCode, body) => ({
   body: JSON.stringify(body)
 })
 
+export const buildBooksPayload = (documents) => ({
+  count: documents.length,
+  books: documents.map((document) => ({
+    id: document.id,
+    ...document.data()
+  }))
+})
+
 export async function handler() {
   const required = [
     'FIREBASE_PROJECT_ID',
@@ -33,7 +41,7 @@ export async function handler() {
     }
 
     const snapshot = await getFirestore().collection('books').get()
-    return jsonResponse(200, { count: snapshot.size })
+    return jsonResponse(200, buildBooksPayload(snapshot.docs))
   } catch (error) {
     console.error('count-books failed:', error.message)
     return jsonResponse(500, { error: 'Unable to read books from Firebase Firestore' })
