@@ -1,5 +1,23 @@
 <template>
-  <pre>{{ JSON.stringify(books, null, 2) }}</pre>
+  <div class="table-responsive">
+    <h1>Books from Firestore</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Book Name</th>
+          <th scope="col">ISBN</th>
+          <th scope="col">Document ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="book in books" :key="book.id">
+          <td>{{ book.name }}</td>
+          <td>{{ book.isbn }}</td>
+          <td class="text-break">{{ book.id }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
